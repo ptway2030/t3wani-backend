@@ -8,15 +8,15 @@ const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const rateLimit = require("express-rate-limit");
 const bodyParser = require('body-parser');
-const redis = require('redis');
+// const redis = require('redis');
 const swaggerDoc = require('./swagger');
 require('express-async-errors');
 
 
-// create rides for caching data
-const REDIS_PORT = process.env.REDIS_URL;
-const client = redis.createClient(REDIS_PORT);
-exports.client = client;
+// // create rides for caching data
+// const REDIS_PORT = process.env.REDIS_URL;
+// const client = redis.createClient(REDIS_PORT);
+// exports.client = client;
 
 mongoose.connect(keys.mongoURI,{ useFindAndModify: false })
 const app = express();
