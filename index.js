@@ -9,7 +9,6 @@ const keys = require('./config/keys');
 const rateLimit = require("express-rate-limit");
 const bodyParser = require('body-parser');
 // const redis = require('redis');
-const swaggerDoc = require('./swagger');
 require('express-async-errors');
 
 
