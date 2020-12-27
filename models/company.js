@@ -56,8 +56,17 @@ const Company = mongoose.model('companies', companySchema);
 
 function validateUser(user) {
     const Schema = {
-        fullName: Joi.string().max(50).required(),
-        email: Joi.string().min(5).max(255).required().email()
+        companyName: Joi.string().max(50).required(),
+        email: Joi.string().min(5).max(255).required().email(),
+        phone: Joi.number().required(),
+        city: Joi.string().required(),
+        sizeOfCompany: Joi.number().required(),
+        CompanySpecialist: Joi.string().required(),
+        Address: Joi.string().required(),
+        sector: Joi.string().required(),
+        superVisorName: Joi.string().required(),
+        orders: Joi.string().required(),
+
     };
 
     return Joi.validate(user, Schema);
