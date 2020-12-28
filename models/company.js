@@ -27,7 +27,7 @@ const companySchema = new Schema({
         required: true,
     },
     sizeOfCompany: {
-        type: Number,
+        type: String,
         required: true
     },
     CompanySpecialist: {
@@ -60,13 +60,13 @@ function validateUser(user) {
         email: Joi.string().min(5).max(255).required().email(),
         phone: Joi.number().required(),
         city: Joi.string().required(),
-        sizeOfCompany: Joi.number().required(),
+        sizeOfCompany: Joi.string().required(),
         CompanySpecialist: Joi.string().required(),
         Address: Joi.string().required(),
         sector: Joi.string().required(),
         superVisorName: Joi.string().required(),
         orders: Joi.string().required(),
-        
+
     };
 
     return Joi.validate(user, Schema);
