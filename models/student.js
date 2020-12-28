@@ -56,18 +56,4 @@ const studentSchema = new Schema({
 
 const student = mongoose.model('students', studentSchema);
 
-function validateUser(user) {
-    const Schema = {
-        fullName: Joi.string().max(50).required(),
-        email: Joi.string().min(5).max(255).required().email()
-    };
-
-    return Joi.validate(user, Schema);
-}
-
-
-
-
-
 exports.student = student;
-exports.validate = validateUser;

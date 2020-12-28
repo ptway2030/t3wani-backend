@@ -1,11 +1,9 @@
-const {Company,validate} = require('../models/company');
+const {Company} = require('../models/company');
 const {companyOrder} = require('../models/companyOrder');
 const {companyOrderMail} = require('../services/mail/mailService');
 
 // create new Company record
 exports.postCompanyData = async (req,res) =>{
-    const { error } = validate(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
     let orderId;
     try{
         // create new company model

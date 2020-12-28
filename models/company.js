@@ -66,7 +66,7 @@ function validateUser(user) {
         sector: Joi.string().required(),
         superVisorName: Joi.string().required(),
         orders: Joi.string().required(),
-
+        
     };
 
     return Joi.validate(user, Schema);

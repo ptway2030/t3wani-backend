@@ -1,11 +1,10 @@
-const {student,validate} = require('../models/student');
+const {student} = require('../models/student');
 
 // create a new student model
 exports.postStudentForm = async (req,res) =>{
 
 
-     const { error } = validate(req.body);
-     if (error) return res.status(400).send(error.details[0].message);
+
     try{
 
         new student({
