@@ -4,10 +4,15 @@ const {companyOrderMail} = require('../services/mail/mailService');
 
 // create new Company record
 exports.postCompanyData = async (req,res) =>{
-    let orderId;
+    let order ={
+        typeOfOrder: req.body.typeOfOrder,
+        Major: req.body.Major,
+        gender: req.body.gender,
+        salary: req.body.salary,
+    };
     try{
         // create new company model
-        let company = new Company({
+       new Company({
             companyName: req.body.companyName,
             email: req.body.email,
             phone: req.body.phone,
@@ -17,16 +22,13 @@ exports.postCompanyData = async (req,res) =>{
             Address: req.body.Address,
             sector: req.body.sector,
             superVisorName:req.body.superVisorName,
+            order:order,
             createDate: Date.now()
 
         }).save()
-        .then( result =>{
-             orderId = createCompanyOrder(req.body,result._id);
 
-        })
 
-        company.orders.push(orderId); // add order to orders array for a company
-        company.save(); // save data
+
         // send mail to admin notify a new order with details //
         companyOrderMail(req.body);
         //finish
@@ -42,7 +44,6 @@ exports.postCompanyData = async (req,res) =>{
 function createCompanyOrder(Data, companyId) {
 
     try{
-
         new companyOrder({
             company:companyId,
             typeOfOrder: Data.typeOfOrder,

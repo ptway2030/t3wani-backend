@@ -13,7 +13,7 @@ const companyOrderSchema = new Schema({
         required: true,
     },
     Major: {
-        type: Number,
+        type: String,
         required: true
     },
     gender: {

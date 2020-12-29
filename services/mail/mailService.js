@@ -98,7 +98,7 @@ let transporter = nodemailer.createTransport({
 // send company order details to Admin (need to read Admins automaric soon)
 
 async function sendOrderDetails(orderData) {
-    const ccemail = fs.readFileSync(__dirname + '/email-Reset.html', 'utf-8');
+    const ccemail = fs.readFileSync(__dirname + '/orderEmail.html', 'utf-8');
         const comemail = hogan.compile(ccemail);
 
         transporter.sendMail({

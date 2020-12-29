@@ -9,8 +9,7 @@ const studentSchema = new Schema({
    fullName: {
         type: String,
         required: true,
-        maxlength: 50,
-        unique: false
+        maxlength: 50
     },
     email: {
         type: String,
@@ -24,9 +23,7 @@ const studentSchema = new Schema({
     },
     city: {
         type: String,
-        required: true,
-        minlength: 5,
-        maxlength: 255
+        required: true
     },
     university: {
         type: String,
@@ -34,9 +31,7 @@ const studentSchema = new Schema({
     },
     Major: {
         type: String,
-        required: true,
-        minlength: 5,
-        maxlength: 255
+        required: true
     },
     trainingSemester: {
         type: String,

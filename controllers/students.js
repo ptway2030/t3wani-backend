@@ -4,7 +4,6 @@ const {student} = require('../models/student');
 exports.postStudentForm = async (req,res) =>{
 
 
-
     try{
 
         new student({
@@ -32,3 +31,4 @@ exports.postStudentForm = async (req,res) =>{
 
 
 }
+
