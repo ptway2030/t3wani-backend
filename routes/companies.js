@@ -6,5 +6,4 @@ module.exports = (app) => {
 app.post('/api/postCompanyData', companyControllers.postCompanyData)
 
 
-
 }

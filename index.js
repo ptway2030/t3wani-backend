@@ -55,6 +55,7 @@ app.use(error);
 
 require('./routes/students')(app);
 require('./routes/companies')(app);
+require('./routes/auth')(app);
 require('./startup/prod')(app);
 
 

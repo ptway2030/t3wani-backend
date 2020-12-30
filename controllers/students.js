@@ -32,3 +32,12 @@ exports.postStudentForm = async (req,res) =>{
 
 }
 
+// get all user data
+exports.getAllStudentsData = async (req,res) =>{
+    let result = await student.find();
+    if(!result) return res.status(400).send("dont have any student");
+    
+    res.status(200).json({
+        result: result
+    })
+}
